@@ -4,12 +4,16 @@
     <h3>Addition Calculator</h3>
     <form id="sumComp">
       <div class="flex justify-center items-center">
-        <input type="text" class="form-control" v-model="num1" />
-        <button type="button" @click="incrementValue(num1)">increment +</button>
+        <input type="text" class="form-control" v-model="numbers.num1" />
+        <button type="button" @click="incrementValue('num1')">
+          increment +
+        </button>
       </div>
       <div class="flex justify-center items-center">
-        <input type="text" class="form-control" v-model="num2" />
-        <button type="button" @click="incrementValue(num2)">increment +</button>
+        <input type="text" class="form-control" v-model="numbers.num2" />
+        <button type="button" @click="incrementValue('num2')">
+          increment +
+        </button>
       </div>
 
       <button @click="addNumbers" type="button">Add me!</button>
@@ -18,27 +22,23 @@
   </div>
 </template>
 <script>
-import { ref } from "vue";
+import { ref, reactive } from "vue";
 export default {
   setup() {
-    let num1 = ref(1);
-    let num2 = ref(2);
     let sum = ref(0);
 
-    const incrementValue = (number) => {
-      // i am able to pass dynamic var and display its value in console log
-      console.log(ref(number).value);
-      // i am unable to change its value
-      ref(number).value++;
+    const numbers = reactive({ num1: 0, num2: 0 });
+
+    const incrementValue = (modification) => {
+      numbers[modification]++;
     };
 
     const addNumbers = () => {
-      sum.value = parseInt(num1.value) + parseInt(num2.value);
+      sum.value = parseInt(numbers.num1) + parseInt(numbers.num2);
     };
     return {
-      num1,
-      num2,
       sum,
+      numbers,
       addNumbers,
       incrementValue,
     };
