@@ -55,7 +55,6 @@ export default defineComponent({
     const getValue = computed(() => sum.value);
 
     return {
-      sum,
       getValue,
       numbers,
       addNumbers,
