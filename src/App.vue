@@ -1,14 +1,14 @@
 <template>
-  <HelloWorld msg="Hello Vue 3.0 + Vite" />
+  <Calculator msg="Hello Vue 3.0 + Vite" />
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Calculator from "./components/Calculator.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    Calculator,
   },
 };
 </script>
