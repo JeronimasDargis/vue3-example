@@ -1,14 +1,14 @@
 <template>
-  <Calculator msg="Hello Vue 3.0 + Vite" />
+  <Scene />
 </template>
 
 <script>
-import Calculator from "./components/Calculator.vue";
+import Scene from "./components/Scene.vue";
 
 export default {
   name: "App",
   components: {
-    Calculator,
+    Scene,
   },
 };
 </script>
